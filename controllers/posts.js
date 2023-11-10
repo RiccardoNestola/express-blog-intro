@@ -43,12 +43,25 @@ function index(req, res) {
         htmlContent = htmlContent.replace("@head", headContent);
    /*      res.type("html").send(htmlContent); */
         
-        let htmlOutput = '<ul>';
-        posts.forEach(post => {
-          htmlOutput += `<li><h3>${post.titolo}</h3><p>${post.contenuto}</p><img src="${post.immagine}" alt=""><p>Tags: ${post.tags.join(', ')}</p></li>`;
-        });
-        htmlOutput += '</ul>';
+        let htmlOutput = posts.map(post => {
+          return `
+                
+                  <div class="col-25">
+                    <div class="card">
+                      <img class="img-res" src="/imgs/${post.immagine}" alt="">
+                     <div class="p-2">
+                        <h3>${post.titolo}</h3>
+                        <p>${post.contenuto}</p>
+                        <p># ${post.tags.join(', ')}</p>
+                      </div>
+                    </div>
+                  </div>
+
+              `;
+            }).join('');
+
         htmlContent = htmlContent.replace("@posts", htmlOutput);
+
         res.send(htmlContent);
         
       },
@@ -64,3 +77,4 @@ function index(req, res) {
 module.exports = {
   index,
 }
+
