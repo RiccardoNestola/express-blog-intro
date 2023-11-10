@@ -10,7 +10,7 @@ function index (req, res) {
 
   res.format({
     html: () => {
-      let htmlContent = fs.readFileSync(path.resolve(__dirname, "../index.html"), "utf-8");
+      let htmlContent = fs.readFileSync(path.resolve(__dirname, "../pages/index.html"), "utf-8");
       let headContent = fs.readFileSync(path.resolve(__dirname, "../head.html"), "utf-8");
       htmlContent = htmlContent.replace("@head", headContent);
       res.type("html").send(htmlContent);
@@ -28,7 +28,7 @@ function index (req, res) {
 function about(req, res) {
   res.format({
     html: () => {
-      let htmlContent = fs.readFileSync(path.resolve(__dirname, "../index.html"), "utf-8");
+      let htmlContent = fs.readFileSync(path.resolve(__dirname, "../pages/index.html"), "utf-8");
       let headContent = fs.readFileSync(path.resolve(__dirname, "../head.html"), "utf-8");
       htmlContent = htmlContent.replace("@head", headContent);
       res.type("html").send(htmlContent);
@@ -46,7 +46,7 @@ function about(req, res) {
 function contacts(req, res){
   res.format({
     html: () => {
-      let htmlContent = fs.readFileSync(path.resolve(__dirname, "../index.html"), "utf-8");
+      let htmlContent = fs.readFileSync(path.resolve(__dirname, "../pages/index.html"), "utf-8");
       let headContent = fs.readFileSync(path.resolve(__dirname, "../head.html"), "utf-8");
       htmlContent = htmlContent.replace("@head", headContent);
       res.type("html").send(htmlContent);

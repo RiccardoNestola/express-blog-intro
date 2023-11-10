@@ -1,7 +1,7 @@
 let posts = [
     {
-        titolo: "Il mio primo post",
-        contenuto: "Questo è il contenuto del mio primo post.",
+        titolo: "Il mio primissimo post",
+        contenuto: "Ciao a tutti,questo è il contenuto del mio primo post.",
         immagine: "1.jpeg",
         tags: ["viaggi", "avventura", "natura"]
     },
